@@ -16,7 +16,7 @@ namespace Sushimi.Data
         {
             base.OnModelCreating(builder);
 
-            Dish[] dishes = new Dish[28];
+            Dish[] dishes = new Dish[29];
             dishes[0] = new Dish() { Id = 1, Category = "Sushi", Name = "California", Weight = 300, Price = 410 };
             dishes[1] = new Dish() { Id = 2, Category = "Sushi", Name = "California with Tuna", Weight = 290, Price = 520 };
             dishes[2] = new Dish() { Id = 3, Category = "Sushi", Name = "Enigma", Weight = 300, Price = 350 };
@@ -49,6 +49,8 @@ namespace Sushimi.Data
             dishes[25] = new Dish() { Id = 26, Category = "Drinks", Name = "Dr-Pepper", Weight = 5, Price = 40 };
             dishes[26] = new Dish() { Id = 27, Category = "Drinks", Name = "Morshinkska", Weight = 5, Price = 35 };
 			dishes[27] = new Dish() { Id = 28, Category = "Drinks", Name = "Juice", Weight = 5, Price = 50 };
+
+			dishes[28] = new Dish() { Id = 29, Category = "Snaks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
 
 			builder.Entity<Dish>().HasData(dishes);
         }

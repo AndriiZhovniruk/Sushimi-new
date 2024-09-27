@@ -474,6 +474,14 @@ namespace Sushimi.Data.Migrations
                             Name = "Juice",
                             Price = 50,
                             Weight = 5
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Category = "Snaks",
+                            Name = "Shrimp shiso kimchi",
+                            Price = 245,
+                            Weight = 120
                         });
                 });
 

@@ -12,8 +12,8 @@ using Sushimi.Data;
 namespace Sushimi.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240927091043_SeedTOTable")]
-    partial class SeedTOTable
+    [Migration("20240927092635_SeedToTable")]
+    partial class SeedToTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -477,6 +477,14 @@ namespace Sushimi.Data.Migrations
                             Name = "Juice",
                             Price = 50,
                             Weight = 5
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Category = "Snaks",
+                            Name = "Shrimp shiso kimchi",
+                            Price = 245,
+                            Weight = 120
                         });
                 });
 
