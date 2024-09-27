@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "Sushi";
+}
+@model List<Dish>
+
+	<div class="catalog">
+	@if (Model != null)
+	{
+		@foreach (var dish in Model)
+			@if(dish.Category == "Sushi")
+			{
+				{
+					<div class="block">
+						<div class="section1">
+							<img class="catalog-img" src="../img/sushi/@(dish.Id).png" alt="">
+							<h1 class="description">
+								@dish.Name <br> @dish.Weight г <br> @dish.Price грн
+							</h1>
+						</div>
+					</div>
+				}
+			}
+	}
+	else
+	{
+		<p>No data available</p>
+	}
+	</div>

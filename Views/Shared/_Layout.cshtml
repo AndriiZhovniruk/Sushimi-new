@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - SushiMIMenu</title>
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="~/js/site.js" type="text/javascript" defer></script>
+</head>
+<body>
+	<header>
+
+		<div class="navbar">
+			<div class="logo"><a href="~/home/index"><img src="~/img/Logo.PNG" height="110px"></a></div>
+			<ul class="links">
+				<li><a href="/Sushi"><img src="~/img/tabs/sushi.png" height="50px"><br>Суші-роли</a></li>
+				<li><a href="/sets"><img src="~/img/tabs/sets.png" height="50px"><br>Сети</a></li>
+				<li><a href="/hot"><img src="~/img/tabs/hot.png" height="50px"><br>Гарячі страви</a></li>
+				<li><a href="/snacks"><img src="~/img/tabs/snacks.png" height="50px"><br>Закуски</a></li>
+				<li><a href="/drinks"><img src="~/img/tabs/drink.png" height="50px"><br>Напої</a></li>
+			</ul>
+			<a href="#" class="action_btn">Замовлення</a>
+			<div class="toggle_btn">
+				<i class="fa-solid fa-bars"> </i>
+			</div>
+		</div>
+		<div class="dropdown_menu">
+			<ul>
+				<li><a href="/sushi">Суші-роли</a></li>
+				<li><a href="/sets">Сети</a></li>
+				<li><a href="/hot">Гарячі страви</a></li>
+				<li><a href="/snacks">Закуски</a></li>
+				<li><a href="/drinks">Напої</a></li>
+				<li><a href="#" class="action_btn">Замовлення</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+		@RenderBody()
+	</main>
+	<footer>
+		<div class="footer-cells">
+			<h1>Адреса</h1>
+			<p>Ресторан <br> Рівне. Вулиця шкільна 19</p>
+		</div>
+		<div class="footer-cells">
+			<h1>Зробити замовлення</h1>
+			<p>(099) ххх-хххх <br> (098) ххх-хххх</p>
+		</div>
+		<div class="footer-cells">
+			<h1>Ми працюємо без вихідних</h1>
+			<p>Ресторан та доставка 10:30 – 23:00</p>
+		</div>
+	</footer>
+</body>
+</html>
