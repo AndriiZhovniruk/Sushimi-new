@@ -52,6 +52,7 @@ namespace Sushimi.Data
 
 			dishes[28] = new Dish() { Id = 29, Category = "Snaks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
 
+
 			builder.Entity<Dish>().HasData(dishes);
         }
     }

@@ -58,7 +58,8 @@ namespace Sushimi.Data.Migrations
 					{ 25, "Drinks", "Sprite", 35, 5 },
 					{ 26, "Drinks", "Dr-Pepper", 40, 5 },
 					{ 27, "Drinks", "Morshinkska", 35, 5 },
-					{29, "Snaks", "Shrimp shiso kimchi", 245, 120 }
+					{ 28, "Drinks", "Juice", 50, 5 },
+					{ 29, "Snaks", "Shrimp shiso kimchi", 245, 120 }
 				});
 		}
 
