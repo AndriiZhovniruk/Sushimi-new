@@ -12,7 +12,7 @@ using Sushimi.Data;
 namespace Sushimi.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240927092635_SeedToTable")]
+    [Migration("20241002212443_SeedToTable")]
     partial class SeedToTable
     {
         /// <inheritdoc />
