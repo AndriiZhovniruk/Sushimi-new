@@ -10,6 +10,7 @@ namespace Sushimi.Data.Migrations
 		/// <inheritdoc />
 		protected override void Up(MigrationBuilder migrationBuilder)
 		{
+
 			migrationBuilder.CreateTable(
 				name: "Dishes",
 				columns: table => new
@@ -60,7 +61,8 @@ namespace Sushimi.Data.Migrations
 					{ 27, "Drinks", "Morshinkska", 35, 5 },
 					{ 28, "Drinks", "Juice", 50, 5 },
 					{ 29, "Snaks", "Shrimp shiso kimchi", 245, 120 }
-				});
+				}
+			);
 		}
 
 		/// <inheritdoc /> 
