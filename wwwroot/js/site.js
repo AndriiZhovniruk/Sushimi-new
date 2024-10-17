@@ -12,3 +12,17 @@ toggleBtn.onclick = function () {
         ? 'fa-solid fa-xmark'
         : 'fa-solid fa-bars'
 }
+
+document.getElementById("open-modal-btn").addEventListener("click", function () {
+    document.getElementById("modal-order").classList.add("open")
+})
+
+document.getElementById("close-modal-btn").addEventListener("click", function () {
+    document.getElementById("modal-order").classList.remove("open")
+})
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById("modal-order").classList.remove("open")
+    }
+})

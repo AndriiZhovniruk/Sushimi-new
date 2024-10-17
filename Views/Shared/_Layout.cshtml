@@ -20,7 +20,7 @@
 				<li><a href="/snacks"><img src="~/img/tabs/snacks.png" height="50px"><br>Закуски</a></li>
 				<li><a href="/drinks"><img src="~/img/tabs/drink.png" height="50px"><br>Напої</a></li>
 			</ul>
-			<a href="#" class="action_btn">Замовлення</a>
+			<button id="open-modal-btn" class="action_btn" >Замовлення</button>
 			<div class="toggle_btn">
 				<i class="fa-solid fa-bars"> </i>
 			</div>
@@ -32,12 +32,33 @@
 				<li><a href="/hot">Гарячі страви</a></li>
 				<li><a href="/snacks">Закуски</a></li>
 				<li><a href="/drinks">Напої</a></li>
-				<li><a href="#" class="action_btn">Замовлення</a></li>
+				<li><button id="open-modal-btn" class="action_btn" >Замовлення</button></li>
 			</ul>
 		</div>
+
+		@* <dialog id="popup" class="popup">
+			<form method="dialog">
+				<h1>Для замовлення телефонуйте на номер:</h1>
+				<h1>0996163360</h1>
+				<button>Ok</button>
+			</form>
+		</dialog> *@
+
+		
 	</header>
 
 	<main>
+		<div class="modal" id="modal-order">
+			<div class="modal_box">
+				<h1>Щоб зробити замовлення: </h1>
+				<p> <br></p>
+				<p>Телефонуйте за номером</p>
+				<p>(099) ххх-хххх <br> (098) ххх-хххх</p>
+				<p> <br></p>
+				<p>Або приходьте за адресою: <br> Рівне. Вулиця шкільна 19 <br> Ресторан працює 10:30 – 23:00 </p>
+				<button class="modal-close-btn" id="close-modal-btn">X</button>
+			</div>
+		</div>
 		@RenderBody()
 	</main>
 	<footer>
@@ -54,5 +75,18 @@
 			<p>Ресторан та доставка 10:30 – 23:00</p>
 		</div>
 	</footer>
+	<script>
+		document.getElementById("open-modal-btn").addEventListener("click", function () {
+			document.getElementById("modal-order").classList.add("open") })
+	</script>
+	<script>
+		document.getElementById("close-modal-btn").addEventListener("click", function () {
+			document.getElementById("modal-order").classList.remove("open")})
+	</script>
+	<script>
+		window.addEventListener('keydown', (e) => {
+			if (e.key === "Escape") {
+			document.getElementById("modal-order").classList.remove("open")}})
+	</script>
 </body>
 </html>

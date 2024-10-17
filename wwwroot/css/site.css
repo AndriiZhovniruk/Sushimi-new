@@ -85,13 +85,11 @@ header {
     }
 
 main {
-    
     min-height: 721px;
 }
 
 section#Home {
     font-family: 'Caveat', cursive;
-    ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,6 +153,7 @@ footer-cells {
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 5;
 }
 
     .dropdown_menu.open {
@@ -223,7 +222,7 @@ footer-cells {
     justify-content: center;
     border: solid 1px;
     border-radius: 10px;
-    border-color: #853552;
+    border-color: black;
     background-color: white;
     transition-property: background;
     transition-duration: 0.5s;
@@ -253,3 +252,72 @@ footer-cells {
     opacity: 0;
     transition-duration: 0.5s;
 }
+
+/*.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0,0,0,.3)
+}
+*/
+
+.modal{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0,0,0,.3);
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+
+}
+.modal_box {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    position: relative;
+    max-width: 400px;
+    padding: 45px;
+    z-index: 10;
+    margin: 30px 15px;
+    background-color: rgb(254, 245, 252);
+    box-shadow: 13px 10px 5px 0px rgba(0,0,0,0.35);
+    transform: scale(0);
+    transition: transform .8s;
+    border: solid 1px;
+    border-radius: 10px;
+    border-color: black;
+}
+
+    .modal_box p {
+        color: rgb(177, 141, 76);
+        font-size: 20px;
+    }
+
+.modal-close-btn {
+    font-size:25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: rgb(254, 245, 252);
+    padding: 5px;
+}
+
+.modal.open{
+    visibility: visible;
+    opacity: 1;
+}
+
+    .modal.open .modal_box {
+        transform: scale(1);
+    }
