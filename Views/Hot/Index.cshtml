@@ -13,6 +13,7 @@
 							<img class="catalog-img" src="~/Img/hot/@(dish.Id).png" alt="">
 							<h1 class="description">
 								@dish.Name <br> @dish.Weight г <br> @dish.Price грн
+								<a href="@Url.Action("AddToCart", "Cart", new { id = dish.Id })" class="action_btn">Додати в кошик</a>
 							</h1>
 						</div>
 					</div>

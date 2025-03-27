@@ -1,0 +1,23 @@
+﻿@model List<CartItem>
+
+<h2>Оформлення замовлення</h2>
+
+<table>
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.TotalPrice</td>
+        </tr>
+    }
+</table>
+
+<form method="post" action="@Url.Action("ConfirmOrder", "Order")">
+    <input type="text" name="address" placeholder="Ваша адреса" required>
+    <input type="text" name="phoneNumber" placeholder="Телефон" required>
+    <input type="text" name="costumername" placeholder="Ім'я" required>
+    
+    <button type="submit">Замовити</button>
+</form>

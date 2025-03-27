@@ -26,3 +26,15 @@ window.addEventListener('keydown', (e) => {
         document.getElementById("modal-order").classList.remove("open")
     }
 })
+document.getElementById("open-modal-btn").addEventListener("click", function () {
+    fetch('/Cart/Index')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("cart-content").innerHTML = html;
+            document.getElementById("modal-order").classList.add("open");
+        });
+});
+
+document.getElementById("close-modal-btn").addEventListener("click", function () {
+    document.getElementById("modal-order").classList.remove("open");
+});

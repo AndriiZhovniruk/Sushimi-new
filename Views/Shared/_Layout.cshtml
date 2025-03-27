@@ -44,7 +44,9 @@
                         <p>Напої</p>
                     </a>
                 </li>
+
             </ul>
+
             <button id="open-modal-btn" class="action_btn">Замовлення</button>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"> </i>
@@ -57,6 +59,7 @@
                 <li><a href="/hot">Гарячі страви</a></li>
                 <li><a href="/snacks">Закуски</a></li>
                 <li><a href="/drinks">Напої</a></li>
+
                 <li><button id="open-modal-btn" class="action_btn">Замовлення</button></li>
             </ul>
         </div>
@@ -66,7 +69,8 @@
     </header>
 
     <main>
-        <div class="modal" id="modal-order">
+        <!--
+         <div class="modal" id="modal-order">
             <div class="modal_box">
                 <h1>Щоб зробити замовлення: </h1>
                 <p> <br></p>
@@ -75,6 +79,18 @@
                 <p> <br></p>
                 <p>Або приходьте за адресою: <br> Рівне. Вулиця шкільна 19 <br> Ресторан працює 10:30 – 23:00 </p>
                 <button class="modal-close-btn" id="close-modal-btn">X</button>
+
+            </div>
+        </div>-->
+
+        <div id="modal-order" class="modal">
+            <div class="modal_box">
+                <button id="close-modal-btn" class="modal-close-btn">X</button>
+                <h2>Ваше замовлення</h2>
+                <div id="cart-content">
+                   
+                </div>
+                <a href="@Url.Action("Index", "Cart")" class="action_btn">Перейти в кошик</a>
             </div>
         </div>
 

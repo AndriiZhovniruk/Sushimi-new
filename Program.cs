@@ -1,7 +1,7 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Sushimi.Data;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,8 +13,22 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 	.AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<CartService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Час життя сесії
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
+
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

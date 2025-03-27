@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Sushimi.Data;
+using Sushimi.Models;
 
 namespace Sushimi.Controllers
 {
@@ -12,7 +14,8 @@ namespace Sushimi.Controllers
 		{
 			_logger = logger;
 			_context = context;
-		}
+            
+        }
 
 		public IActionResult Index()
 		{
@@ -27,5 +30,6 @@ namespace Sushimi.Controllers
 				return StatusCode(500);
 			}
 		}
-	}
+        
+    }
 }

@@ -1,0 +1,45 @@
+﻿@model List<CartItem>
+
+<h2>Кошик</h2>
+
+@if (Model.Count == 0)
+
+{
+    <p>Ваш кошик порожній.</p>
+}
+
+else
+
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Назва</th>
+                <th>Кількість</th>
+                <th>Ціна</th>
+                <th>В сумі</th>
+                <th>Видалити</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price</td>
+                    <td>@item.TotalPrice</td>
+                    <td>
+                        <a href="@Url.Action("RemoveFromCart", "Cart", new { id = item.DishId })">❌</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>Загальна сума: @Model.Sum(i => i.TotalPrice) грн</p>
+
+    <a href="@Url.Action("ClearCart", "Cart")">Очистити кошик</a>
+    <a href="@Url.Action("Checkout", "Order")">Оформити замовлення</a>
+}

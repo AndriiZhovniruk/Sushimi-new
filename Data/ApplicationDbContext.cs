@@ -7,11 +7,14 @@ namespace Sushimi.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Dish> Dishes { get; set; }
-
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+        
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -55,6 +58,8 @@ namespace Sushimi.Data
             dishes[31] = new Dish() { Id = 32, Category = "Drinks", Name = "Morshynska 0.5L", Weight = 0.5f, Price = 35 };
 
             builder.Entity<Dish>().HasData(dishes);
+
+
         }
     }
 
