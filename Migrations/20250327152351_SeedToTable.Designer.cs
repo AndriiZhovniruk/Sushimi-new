@@ -9,11 +9,11 @@ using Sushimi.Data;
 
 #nullable disable
 
-namespace Sushimi.Data.Migrations
+namespace Sushimi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241002221036_SeedToTable2")]
-    partial class SeedToTable2
+    [Migration("20250327152351_SeedToTable")]
+    partial class SeedToTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -246,8 +246,8 @@ namespace Sushimi.Data.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("Weight")
-                        .HasColumnType("int");
+                    b.Property<float>("Weight")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
@@ -260,7 +260,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "California",
                             Price = 410,
-                            Weight = 300
+                            Weight = 300f
                         },
                         new
                         {
@@ -268,7 +268,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "California with Tuna",
                             Price = 520,
-                            Weight = 290
+                            Weight = 290f
                         },
                         new
                         {
@@ -276,7 +276,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "Enigma",
                             Price = 350,
-                            Weight = 300
+                            Weight = 300f
                         },
                         new
                         {
@@ -284,7 +284,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "Sakura",
                             Price = 480,
-                            Weight = 290
+                            Weight = 290f
                         },
                         new
                         {
@@ -292,7 +292,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "Felix with Crab",
                             Price = 380,
-                            Weight = 305
+                            Weight = 305f
                         },
                         new
                         {
@@ -300,7 +300,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "Itachi",
                             Price = 390,
-                            Weight = 320
+                            Weight = 320f
                         },
                         new
                         {
@@ -308,15 +308,15 @@ namespace Sushimi.Data.Migrations
                             Category = "Sushi",
                             Name = "Red Dragon",
                             Price = 530,
-                            Weight = 325
+                            Weight = 325f
                         },
                         new
                         {
                             Id = 8,
                             Category = "Sushi",
-                            Name = "Fiadelfia",
+                            Name = "Philadelphia",
                             Price = 400,
-                            Weight = 320
+                            Weight = 320f
                         },
                         new
                         {
@@ -324,7 +324,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sets",
                             Name = "set 1",
                             Price = 1035,
-                            Weight = 600
+                            Weight = 600f
                         },
                         new
                         {
@@ -332,7 +332,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sets",
                             Name = "set 2",
                             Price = 1540,
-                            Weight = 895
+                            Weight = 895f
                         },
                         new
                         {
@@ -340,7 +340,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sets",
                             Name = "set 3",
                             Price = 1265,
-                            Weight = 950
+                            Weight = 950f
                         },
                         new
                         {
@@ -348,7 +348,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sets",
                             Name = "set 4",
                             Price = 3300,
-                            Weight = 2100
+                            Weight = 2100f
                         },
                         new
                         {
@@ -356,7 +356,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sets",
                             Name = "set 5",
                             Price = 2280,
-                            Weight = 1600
+                            Weight = 1600f
                         },
                         new
                         {
@@ -364,7 +364,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Sets",
                             Name = "set 6",
                             Price = 1320,
-                            Weight = 650
+                            Weight = 650f
                         },
                         new
                         {
@@ -372,7 +372,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Hot",
                             Name = "Beef udon noodles",
                             Price = 169,
-                            Weight = 260
+                            Weight = 260f
                         },
                         new
                         {
@@ -380,7 +380,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Hot",
                             Name = "Funchoza with seafood",
                             Price = 245,
-                            Weight = 250
+                            Weight = 250f
                         },
                         new
                         {
@@ -388,7 +388,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Hot",
                             Name = "Unagi chicken with rice",
                             Price = 155,
-                            Weight = 280
+                            Weight = 280f
                         },
                         new
                         {
@@ -396,7 +396,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Hot",
                             Name = "Udon noodles with prawns",
                             Price = 245,
-                            Weight = 370
+                            Weight = 370f
                         },
                         new
                         {
@@ -404,7 +404,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Snaks",
                             Name = "Inari",
                             Price = 140,
-                            Weight = 65
+                            Weight = 65f
                         },
                         new
                         {
@@ -412,15 +412,15 @@ namespace Sushimi.Data.Migrations
                             Category = "Snaks",
                             Name = "Sashimi",
                             Price = 480,
-                            Weight = 155
+                            Weight = 155f
                         },
                         new
                         {
                             Id = 21,
                             Category = "Snaks",
-                            Name = "Tatar",
+                            Name = "Tartar",
                             Price = 360,
-                            Weight = 150
+                            Weight = 150f
                         },
                         new
                         {
@@ -428,7 +428,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Snaks",
                             Name = "Chuka",
                             Price = 230,
-                            Weight = 185
+                            Weight = 185f
                         },
                         new
                         {
@@ -436,7 +436,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Drinks",
                             Name = "Coca-Cola",
                             Price = 35,
-                            Weight = 5
+                            Weight = 0.5f
                         },
                         new
                         {
@@ -444,7 +444,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Drinks",
                             Name = "Fanta",
                             Price = 35,
-                            Weight = 5
+                            Weight = 0.5f
                         },
                         new
                         {
@@ -452,7 +452,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Drinks",
                             Name = "Sprite",
                             Price = 35,
-                            Weight = 5
+                            Weight = 0.5f
                         },
                         new
                         {
@@ -460,15 +460,15 @@ namespace Sushimi.Data.Migrations
                             Category = "Drinks",
                             Name = "Dr-Pepper",
                             Price = 40,
-                            Weight = 5
+                            Weight = 0.5f
                         },
                         new
                         {
                             Id = 27,
                             Category = "Drinks",
-                            Name = "Morshinkska",
-                            Price = 35,
-                            Weight = 5
+                            Name = "Morshynska 1L",
+                            Price = 50,
+                            Weight = 1f
                         },
                         new
                         {
@@ -476,7 +476,7 @@ namespace Sushimi.Data.Migrations
                             Category = "Drinks",
                             Name = "Juice",
                             Price = 50,
-                            Weight = 5
+                            Weight = 0.5f
                         },
                         new
                         {
@@ -484,7 +484,31 @@ namespace Sushimi.Data.Migrations
                             Category = "Snaks",
                             Name = "Shrimp shiso kimchi",
                             Price = 245,
-                            Weight = 120
+                            Weight = 120f
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Category = "Snaks",
+                            Name = "Chips",
+                            Price = 135,
+                            Weight = 100f
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Category = "Hot",
+                            Name = "Ramen Spicy",
+                            Price = 145,
+                            Weight = 350f
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Category = "Drinks",
+                            Name = "Morshynska 0.5L",
+                            Price = 35,
+                            Weight = 0.5f
                         });
                 });
 

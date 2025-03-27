@@ -1,92 +1,117 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - SushiMIMenu</title>
-	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="~/js/site.js" type="text/javascript" defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SushiMIMenu</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="~/js/site.js" type="text/javascript" defer></script>
 </head>
 <body>
-	<header>
+    <header>
 
-		<div class="navbar">
-			<div class="logo"><a href="~/home/index"><img src="~/img/Logo.PNG" height="110px"></a></div>
-			<ul class="links">
-				<li><a href="/Sushi"><img src="~/img/tabs/sushi.png" height="50px"><br>Суші-роли</a></li>
-				<li><a href="/sets"><img src="~/img/tabs/sets.png" height="50px"><br>Сети</a></li>
-				<li><a href="/hot"><img src="~/img/tabs/hot.png" height="50px"><br>Гарячі страви</a></li>
-				<li><a href="/snacks"><img src="~/img/tabs/snacks.png" height="50px"><br>Закуски</a></li>
-				<li><a href="/drinks"><img src="~/img/tabs/drink.png" height="50px"><br>Напої</a></li>
-			</ul>
-			<button id="open-modal-btn" class="action_btn" >Замовлення</button>
-			<div class="toggle_btn">
-				<i class="fa-solid fa-bars"> </i>
-			</div>
-		</div>
-		<div class="dropdown_menu">
-			<ul>
-				<li><a href="/sushi">Суші-роли</a></li>
-				<li><a href="/sets">Сети</a></li>
-				<li><a href="/hot">Гарячі страви</a></li>
-				<li><a href="/snacks">Закуски</a></li>
-				<li><a href="/drinks">Напої</a></li>
-				<li><button id="open-modal-btn" class="action_btn" >Замовлення</button></li>
-			</ul>
-		</div>
+        <div class="navbar">
+            <div class="logo"><a href="~/home/index"><img src="~/img/SmallLogo.png" height="110px"></a></div>
+            <ul class="links">
+                <li>
+                    <a href="/Sushi">
+                        <img src="~/img/tabs/sushi.png" style="width: 50px;">
+                        <p>Суші-роли</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/sets">
+                        <img src="~/img/tabs/sets.png" style="width: 50px;">
+                        <p>Сети</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hot">
+                        <img src="~/img/tabs/hot.png" style="width: 50px;">
+                        <p>Гарячі страви</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/snacks">
+                        <img src="~/img/tabs/snacks.png" style="width: 50px;">
+                        <p>Закуски</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/drinks">
+                        <img src="~/img/tabs/drink.png" style="width: 50px;">
+                        <p>Напої</p>
+                    </a>
+                </li>
+            </ul>
+            <button id="open-modal-btn" class="action_btn">Замовлення</button>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"> </i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="/sushi">Суші-роли</a></li>
+                <li><a href="/sets">Сети</a></li>
+                <li><a href="/hot">Гарячі страви</a></li>
+                <li><a href="/snacks">Закуски</a></li>
+                <li><a href="/drinks">Напої</a></li>
+                <li><button id="open-modal-btn" class="action_btn">Замовлення</button></li>
+            </ul>
+        </div>
 
-		@* <dialog id="popup" class="popup">
-			<form method="dialog">
-				<h1>Для замовлення телефонуйте на номер:</h1>
-				<h1>0996163360</h1>
-				<button>Ok</button>
-			</form>
-		</dialog> *@
 
-		
-	</header>
 
-	<main>
-		<div class="modal" id="modal-order">
-			<div class="modal_box">
-				<h1>Щоб зробити замовлення: </h1>
-				<p> <br></p>
-				<p>Телефонуйте за номером</p>
-				<p>(099) ххх-хххх <br> (098) ххх-хххх</p>
-				<p> <br></p>
-				<p>Або приходьте за адресою: <br> Рівне. Вулиця шкільна 19 <br> Ресторан працює 10:30 – 23:00 </p>
-				<button class="modal-close-btn" id="close-modal-btn">X</button>
-			</div>
-		</div>
-		@RenderBody()
-	</main>
-	<footer>
-		<div class="footer-cells">
-			<h1>Адреса</h1>
-			<p>Ресторан <br> Рівне. Вулиця шкільна 19</p>
-		</div>
-		<div class="footer-cells">
-			<h1>Зробити замовлення</h1>
-			<p>(099) ххх-хххх <br> (098) ххх-хххх</p>
-		</div>
-		<div class="footer-cells">
-			<h1>Ми працюємо без вихідних</h1>
-			<p>Ресторан та доставка 10:30 – 23:00</p>
-		</div>
-	</footer>
-	<script>
-		document.getElementById("open-modal-btn").addEventListener("click", function () {
-			document.getElementById("modal-order").classList.add("open") })
-	</script>
-	<script>
-		document.getElementById("close-modal-btn").addEventListener("click", function () {
-			document.getElementById("modal-order").classList.remove("open")})
-	</script>
-	<script>
-		window.addEventListener('keydown', (e) => {
-			if (e.key === "Escape") {
-			document.getElementById("modal-order").classList.remove("open")}})
-	</script>
+    </header>
+
+    <main>
+        <div class="modal" id="modal-order">
+            <div class="modal_box">
+                <h1>Щоб зробити замовлення: </h1>
+                <p> <br></p>
+                <p>Телефонуйте за номером</p>
+                <p>(099) ххх-хххх <br> (098) ххх-хххх</p>
+                <p> <br></p>
+                <p>Або приходьте за адресою: <br> Рівне. Вулиця шкільна 19 <br> Ресторан працює 10:30 – 23:00 </p>
+                <button class="modal-close-btn" id="close-modal-btn">X</button>
+            </div>
+        </div>
+
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="footer-cells">
+            <h1>Адреса</h1>
+            <p>Ресторан <br> Рівне. Вулиця шкільна 19</p>
+        </div>
+        <div class="footer-cells">
+            <h1>Зробити замовлення</h1>
+            <p>(099) ххх-хххх <br> (098) ххх-хххх</p>
+        </div>
+        <div class="footer-cells">
+            <h1>Ми працюємо без вихідних</h1>
+            <p>Ресторан та доставка 10:30 – 23:00</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("open-modal-btn").addEventListener("click", function () {
+            document.getElementById("modal-order").classList.add("open")
+        })
+    </script>
+    <script>
+        document.getElementById("close-modal-btn").addEventListener("click", function () {
+            document.getElementById("modal-order").classList.remove("open")
+        })
+    </script>
+    <script>
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                document.getElementById("modal-order").classList.remove("open")
+            }
+        })
+    </script>
 </body>
 </html>

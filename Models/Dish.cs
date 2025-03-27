@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public required string Category { get; set; }
         public required string Name { get; set; }
-        public int Weight { get; set; }
+        public float Weight { get; set; }
         public int Price { get; set; }
         
     }

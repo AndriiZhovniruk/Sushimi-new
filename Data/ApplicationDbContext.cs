@@ -16,7 +16,7 @@ namespace Sushimi.Data
         {
             base.OnModelCreating(builder);
 
-            Dish[] dishes = new Dish[29];
+            Dish[] dishes = new Dish[32];
             dishes[0] = new Dish() { Id = 1, Category = "Sushi", Name = "California", Weight = 300, Price = 410 };
             dishes[1] = new Dish() { Id = 2, Category = "Sushi", Name = "California with Tuna", Weight = 290, Price = 520 };
             dishes[2] = new Dish() { Id = 3, Category = "Sushi", Name = "Enigma", Weight = 300, Price = 350 };
@@ -43,17 +43,18 @@ namespace Sushimi.Data
             dishes[20] = new Dish() { Id = 21, Category = "Snaks", Name = "Tartar", Weight = 150, Price = 360 };
             dishes[21] = new Dish() { Id = 22, Category = "Snaks", Name = "Chuka", Weight = 185, Price = 230 };
 
-            dishes[22] = new Dish() { Id = 23, Category = "Drinks", Name = "Coca-Cola", Weight = 5, Price = 35 };
-            dishes[23] = new Dish() { Id = 24, Category = "Drinks", Name = "Fanta", Weight = 5, Price = 35 };
-            dishes[24] = new Dish() { Id = 25, Category = "Drinks", Name = "Sprite", Weight = 5, Price = 35 };
-            dishes[25] = new Dish() { Id = 26, Category = "Drinks", Name = "Dr-Pepper", Weight = 5, Price = 40 };
-            dishes[26] = new Dish() { Id = 27, Category = "Drinks", Name = "Morshynska", Weight = 5, Price = 35 };
-			dishes[27] = new Dish() { Id = 28, Category = "Drinks", Name = "Juice", Weight = 5, Price = 50 };
-
+            dishes[22] = new Dish() { Id = 23, Category = "Drinks", Name = "Coca-Cola", Weight = 0.5f, Price = 35 };
+            dishes[23] = new Dish() { Id = 24, Category = "Drinks", Name = "Fanta", Weight = 0.5f, Price = 35 };
+            dishes[24] = new Dish() { Id = 25, Category = "Drinks", Name = "Sprite", Weight = 0.5f, Price = 35 };
+            dishes[25] = new Dish() { Id = 26, Category = "Drinks", Name = "Dr-Pepper", Weight = 0.5f, Price = 40 };
+            dishes[26] = new Dish() { Id = 27, Category = "Drinks", Name = "Morshynska 1L", Weight = 1f, Price = 50 };
+			dishes[27] = new Dish() { Id = 28, Category = "Drinks", Name = "Juice", Weight = 0.5f, Price = 50 };
 			dishes[28] = new Dish() { Id = 29, Category = "Snaks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
+            dishes[29] = new Dish() { Id = 30, Category = "Snaks", Name = "Chips", Weight = 100, Price = 135 };
+            dishes[30] = new Dish() { Id = 31, Category = "Hot", Name = "Ramen Spicy", Weight = 350, Price = 145 };
+            dishes[31] = new Dish() { Id = 32, Category = "Drinks", Name = "Morshynska 0.5L", Weight = 0.5f, Price = 35 };
 
-
-			builder.Entity<Dish>().HasData(dishes);
+            builder.Entity<Dish>().HasData(dishes);
         }
     }
 
