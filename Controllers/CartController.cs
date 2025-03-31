@@ -52,4 +52,10 @@ public class CartController : Controller
         var cart = _cartService.GetCart();
         return Json(cart);
     }
+
+    public IActionResult GetCartPartial()
+    {
+        var cart = _cartService.GetCart();
+        return PartialView("_CartPartial", cart);
+    }
 }

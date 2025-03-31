@@ -21,25 +21,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/sets">
+                    <a href="/Sets">
                         <img src="~/img/tabs/sets.png" style="width: 50px;">
                         <p>Сети</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/hot">
+                    <a href="/Hot">
                         <img src="~/img/tabs/hot.png" style="width: 50px;">
                         <p>Гарячі страви</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/snacks">
+                    <a href="/Snacks">
                         <img src="~/img/tabs/snacks.png" style="width: 50px;">
                         <p>Закуски</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/drinks">
+                    <a href="/Drinks">
                         <img src="~/img/tabs/drink.png" style="width: 50px;">
                         <p>Напої</p>
                     </a>
@@ -54,11 +54,11 @@
         </div>
         <div class="dropdown_menu">
             <ul>
-                <li><a href="/sushi">Суші-роли</a></li>
-                <li><a href="/sets">Сети</a></li>
-                <li><a href="/hot">Гарячі страви</a></li>
-                <li><a href="/snacks">Закуски</a></li>
-                <li><a href="/drinks">Напої</a></li>
+                <li><a href="/Sushi">Суші-роли</a></li>
+                <li><a href="/Sets">Сети</a></li>
+                <li><a href="/Hot">Гарячі страви</a></li>
+                <li><a href="/Snacks">Закуски</a></li>
+                <li><a href="/Drinks">Напої</a></li>
 
                 <li><button id="open-modal-btn" class="action_btn">Замовлення</button></li>
             </ul>
@@ -69,27 +69,16 @@
     </header>
 
     <main>
-        <!--
-         <div class="modal" id="modal-order">
-            <div class="modal_box">
-                <h1>Щоб зробити замовлення: </h1>
-                <p> <br></p>
-                <p>Телефонуйте за номером</p>
-                <p>(099) ххх-хххх <br> (098) ххх-хххх</p>
-                <p> <br></p>
-                <p>Або приходьте за адресою: <br> Рівне. Вулиця шкільна 19 <br> Ресторан працює 10:30 – 23:00 </p>
-                <button class="modal-close-btn" id="close-modal-btn">X</button>
-
-            </div>
-        </div>-->
 
         <div id="modal-order" class="modal">
             <div class="modal_box">
                 <button id="close-modal-btn" class="modal-close-btn">X</button>
                 <h2>Ваше замовлення</h2>
+
                 <div id="cart-content">
-                   
+                    <p>Кошик порожній</p>
                 </div>
+
                 <a href="@Url.Action("Index", "Cart")" class="action_btn">Перейти в кошик</a>
             </div>
         </div>
@@ -112,22 +101,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById("open-modal-btn").addEventListener("click", function () {
-            document.getElementById("modal-order").classList.add("open")
-        })
-    </script>
-    <script>
-        document.getElementById("close-modal-btn").addEventListener("click", function () {
-            document.getElementById("modal-order").classList.remove("open")
-        })
-    </script>
-    <script>
-        window.addEventListener('keydown', (e) => {
-            if (e.key === "Escape") {
-                document.getElementById("modal-order").classList.remove("open")
-            }
-        })
-    </script>
+
+
 </body>
 </html>

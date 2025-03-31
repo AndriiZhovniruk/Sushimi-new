@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = "Snaks";
+	ViewData["Title"] = "Snacks";
 }
 @model List<Dish>
 
@@ -7,15 +7,16 @@
 	@if (Model != null)
 	{
 		@foreach (var dish in Model)
-			@if (dish.Category == "Snaks")
+			@if (dish.Category == "Snacks")
+
 			{
 				{
 					<div class="block">
 						<div class="section1">
-							<img class="catalog-img" src="~/Img/snaks/@(dish.Id).png" alt="">
+							<img class="catalog-img" src="~/Img/Snacks/@(dish.Id).png" alt="">
 							<h1 class="description">
 								@dish.Name <br> @dish.Weight г <br> @dish.Price грн
-								<a href="@Url.Action("AddToCart", "Cart", new { id = dish.Id })" class="action_btn">Додати в кошик</a>
+								<br><br><a href="@Url.Action("AddToCart", "Cart", new { id = dish.Id })" class="action_btn">Додати в кошик</a>
 							</h1>
 						</div>
 					</div>

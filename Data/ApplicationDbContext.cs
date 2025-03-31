@@ -41,10 +41,10 @@ namespace Sushimi.Data
             dishes[16] = new Dish() { Id = 17, Category = "Hot", Name = "Unagi chicken with rice", Weight = 280, Price = 155 };
             dishes[17] = new Dish() { Id = 18, Category = "Hot", Name = "Udon noodles with prawns", Weight = 370, Price = 245 };
 
-            dishes[18] = new Dish() { Id = 19, Category = "Snaks", Name = "Inari", Weight = 65, Price = 140 };
-            dishes[19] = new Dish() { Id = 20, Category = "Snaks", Name = "Sashimi", Weight = 155, Price = 480 };
-            dishes[20] = new Dish() { Id = 21, Category = "Snaks", Name = "Tartar", Weight = 150, Price = 360 };
-            dishes[21] = new Dish() { Id = 22, Category = "Snaks", Name = "Chuka", Weight = 185, Price = 230 };
+            dishes[18] = new Dish() { Id = 19, Category = "Snaсks", Name = "Inari", Weight = 65, Price = 140 };
+            dishes[19] = new Dish() { Id = 20, Category = "Snaсks", Name = "Sashimi", Weight = 155, Price = 480 };
+            dishes[20] = new Dish() { Id = 21, Category = "Snaсks", Name = "Tartar", Weight = 150, Price = 360 };
+            dishes[21] = new Dish() { Id = 22, Category = "Snaсks", Name = "Chuka", Weight = 185, Price = 230 };
 
             dishes[22] = new Dish() { Id = 23, Category = "Drinks", Name = "Coca-Cola", Weight = 0.5f, Price = 35 };
             dishes[23] = new Dish() { Id = 24, Category = "Drinks", Name = "Fanta", Weight = 0.5f, Price = 35 };
@@ -52,8 +52,8 @@ namespace Sushimi.Data
             dishes[25] = new Dish() { Id = 26, Category = "Drinks", Name = "Dr-Pepper", Weight = 0.5f, Price = 40 };
             dishes[26] = new Dish() { Id = 27, Category = "Drinks", Name = "Morshynska 1L", Weight = 1f, Price = 50 };
 			dishes[27] = new Dish() { Id = 28, Category = "Drinks", Name = "Juice", Weight = 0.5f, Price = 50 };
-			dishes[28] = new Dish() { Id = 29, Category = "Snaks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
-            dishes[29] = new Dish() { Id = 30, Category = "Snaks", Name = "Chips", Weight = 100, Price = 135 };
+			dishes[28] = new Dish() { Id = 29, Category = "Snaсks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
+            dishes[29] = new Dish() { Id = 30, Category = "Snaсks", Name = "Chips", Weight = 100, Price = 135 };
             dishes[30] = new Dish() { Id = 31, Category = "Hot", Name = "Ramen Spicy", Weight = 350, Price = 145 };
             dishes[31] = new Dish() { Id = 32, Category = "Drinks", Name = "Morshynska 0.5L", Weight = 0.5f, Price = 35 };
 

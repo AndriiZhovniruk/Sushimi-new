@@ -43,7 +43,14 @@ public class CartService
 
         if (item != null)
         {
-            cart.Remove(item);
+            if (item.Quantity > 1) { 
+            item.Quantity--;
+            }
+            else
+            {
+                cart.Remove(item);
+            }
+            
             SaveCart(cart);
         }
     }

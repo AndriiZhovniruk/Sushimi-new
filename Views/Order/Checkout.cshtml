@@ -3,17 +3,29 @@
 <h2>Оформлення замовлення</h2>
 
 <table>
-    @foreach (var item in Model)
-
-    {
+    <thead>
         <tr>
-            <td>@item.Name</td>
-            <td>@item.Quantity</td>
-            <td>@item.TotalPrice</td>
+            <th>Назва</th>
+            <th>Кількість</th>
+            <th>Ціна</th>
+            <th>В сумі</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>@item.TotalPrice</td>
+                
+            </tr>
+        }
+    </tbody>
+    
 </table>
-
+<p>Загальна сума: @Model.Sum(i => i.TotalPrice) грн</p>
 <form method="post" action="@Url.Action("ConfirmOrder", "Order")">
     <input type="text" name="address" placeholder="Ваша адреса" required>
     <input type="text" name="phoneNumber" placeholder="Телефон" required>
