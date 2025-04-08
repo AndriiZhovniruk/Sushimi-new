@@ -1,35 +1,58 @@
 ﻿@model List<CartItem>
-
-<h2>Оформлення замовлення</h2>
-
 <table>
-    <thead>
-        <tr>
-            <th>Назва</th>
-            <th>Кількість</th>
-            <th>Ціна</th>
-            <th>В сумі</th>
-        </tr>
-    </thead>
+    <caption>
+        <h2>Кошик</h2>
+
+    </caption>
+    <tr style=" font-weight: bold;">
+        <th style="width:50%">Назва</th>
+        <th style="width:15%">Кількість</th>
+        <th style="width:15%">Ціна</th>
+        <th style="width:15%">В сумі</th>
+        <th style="width:5%">Видалити</th>
+    </tr>
     <tbody>
         @foreach (var item in Model)
+
         {
             <tr>
                 <td>@item.Name</td>
                 <td>@item.Quantity</td>
                 <td>@item.Price</td>
                 <td>@item.TotalPrice</td>
-                
+                <td>
+                    <a href="@Url.Action("RemoveFromCart", "Cart", new { id = item.DishId })">❌</a>
+                </td>
             </tr>
         }
+        <tr>
+            <th colspan="5" style="text-align:center">
+                <p>Загальна сума: @Model.Sum(i => i.TotalPrice) грн</p>
+            </th>
+        </tr>
     </tbody>
-    
 </table>
-<p>Загальна сума: @Model.Sum(i => i.TotalPrice) грн</p>
-<form method="post" action="@Url.Action("ConfirmOrder", "Order")">
-    <input type="text" name="address" placeholder="Ваша адреса" required>
-    <input type="text" name="phoneNumber" placeholder="Телефон" required>
-    <input type="text" name="costumername" placeholder="Ім'я" required>
+<table>
     
-    <button type="submit">Замовити</button>
-</form>
+    <form method="post" action="@Url.Action("ConfirmOrder", "Order")">
+
+    <tr>
+        <th> <input type="text" name="address" placeholder="Ваша адреса" required></th>
+        <th><input type="text" name="phoneNumber" placeholder="Телефон" required></th>
+        <th><input type="text" name="costumername" placeholder="Ім'я" required></th>
+        
+    <tr >
+        <th colspan="5" style="text-align:center"> <button type="submit" class="confirm_order_btn">Замовити</button></th>
+    
+    </tr>
+    </form>
+</table>
+
+
+
+
+
+
+
+
+

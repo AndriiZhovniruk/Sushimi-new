@@ -3,10 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Caveat', cursive;
 }
 
 body {
-    font-family: sans-serif;
+    
     background-color: rgb(254, 245, 252);
     background-size: cover;
     background-position: center;
@@ -50,7 +51,7 @@ header {
         font-size: 1.5rem;
         font-weight: bold;
         color: rgb(177, 141, 76);
-        font-family: 'Caveat', cursive;
+        
     }
 
     .navbar .links {
@@ -68,6 +69,7 @@ header {
     }
 
 .action_btn {
+    
     background-color: rgb(177, 141, 76);
     color: rgb(29, 29, 29);
     padding: 1rem 1rem;
@@ -90,11 +92,11 @@ header {
     }
 
 main {
-    min-height: 721px;
+    min-height: 699px;
 }
 
 section#Home {
-    font-family: 'Caveat', cursive;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,7 +123,7 @@ section#Home {
 
 .welcome-text {
     text-shadow: 0px 5px 5px rgb(0, 0, 0);
-    font-family: 'Caveat', cursive;
+    
     color: rgb(254, 245, 252);
     font-size: 3em;
     text-align: center;
@@ -138,7 +140,7 @@ footer {
     min-height: 100px;
     color: rgb(177, 141, 76);
     text-align: center;
-    font-family: 'Caveat', cursive;
+    
 }
 
 footer-cells {
@@ -204,7 +206,7 @@ footer-cells {
 
 /*Блок меню*/
 .catalog {
-    min-height: 721px;
+    min-height: 699px;
     background-color: rgb(29, 29, 29);
     box-shadow: 0px 3px 25px rgb(7, 7, 7);
     display: flex;
@@ -217,7 +219,6 @@ footer-cells {
     text-align: center;
     color: #cbcbcb;
     font-size: 1em;
-    font-family: 'Caveat', cursive;
     margin-bottom: 1%;
 }
 
@@ -240,7 +241,6 @@ footer-cells {
 
 .description {
     margin-top: 140px;
-    font-family: 'Caveat', cursive;
     color: rgb(177, 141, 76);
     font-size: 1em;
     position: absolute;
@@ -278,7 +278,6 @@ footer-cells {
 
 .modal_box {
     text-align: center;
-    font-family: 'Caveat', cursive;
     position: relative;
     max-width: 400px;
     padding: 45px;
@@ -317,3 +316,69 @@ footer-cells {
         transform: scale(1);
     }
 
+
+table {
+    border-collapse: collapse;
+    color: #686461;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+caption {
+    padding: 10px;
+    color: white;
+    background: rgb(177, 141, 76);
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+th {
+    border-top: 3px solid #B9B29F;
+    border-bottom: 3px solid #B9B29F;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background: white;
+}
+
+tr:nth-child(even) {
+    background: #E8E6D1;
+}
+
+.confirm_order_btn {
+    background-color: rgb(177, 141, 76);
+    color: rgb(29, 29, 29);
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+    .confirm_order_btn:hover {
+        scale: 1.05;
+        color: rgb(12, 2, 27);
+    }
+
+    .confirm_order_btn:active {
+        scale: 0.95;
+    }
+
+input {
+    width: 90%;
+}
+
+.order_big_text {
+    padding-top:15%;
+    text-align: center;
+}
