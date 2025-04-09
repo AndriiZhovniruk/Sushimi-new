@@ -1,0 +1,21 @@
+﻿@model List<Order>
+
+<h2>Замовлення</h2>
+
+@foreach (var order in Model)
+{
+    <div style="border:1px solid #ccc; padding:10px; margin:10px 0;">
+        <p><strong>ID замовлення:</strong> @order.Id</p>
+        <p><strong>Ім’я:</strong> @order.CustomerName</p>
+        <p><strong>Телефон:</strong> @order.PhoneNumber</p>
+        <p><strong>Адреса:</strong> @order.Address</p>
+        <p><strong>Склад:</strong></p>
+        <ul>
+            @foreach (var item in order.OrderItems)
+            {
+                <li>@item.DishName — @item.Quantity шт. — @item.Price грн</li>
+            }
+        </ul>
+    </div>
+}
+<h1><a href="@Url.Action("Dashboard", "Admin")">Повернутись до DashBoard</a></h1>

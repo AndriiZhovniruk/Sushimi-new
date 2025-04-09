@@ -164,7 +164,7 @@ footer-cells {
 }
 
     .dropdown_menu.open {
-        height: 270px;
+        height: auto;
     }
 
     .dropdown_menu li {
@@ -381,4 +381,8 @@ input {
 .order_big_text {
     padding-top:15%;
     text-align: center;
+}
+
+h1 a{
+    color:black;
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Sushimi.Models;
+using System.Reflection.Emit;
 
 namespace Sushimi.Data
 {
@@ -9,15 +10,17 @@ namespace Sushimi.Data
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<AdminUser> AdminUsers { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-        
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
 
             Dish[] dishes = new Dish[32];
             dishes[0] = new Dish() { Id = 1, Category = "Sushi", Name = "California", Weight = 300, Price = 410 };
@@ -51,14 +54,16 @@ namespace Sushimi.Data
             dishes[24] = new Dish() { Id = 25, Category = "Drinks", Name = "Sprite", Weight = 0.5f, Price = 35 };
             dishes[25] = new Dish() { Id = 26, Category = "Drinks", Name = "Dr-Pepper", Weight = 0.5f, Price = 40 };
             dishes[26] = new Dish() { Id = 27, Category = "Drinks", Name = "Morshynska 1L", Weight = 1f, Price = 50 };
-			dishes[27] = new Dish() { Id = 28, Category = "Drinks", Name = "Juice", Weight = 0.5f, Price = 50 };
-			dishes[28] = new Dish() { Id = 29, Category = "Snaсks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
+            dishes[27] = new Dish() { Id = 28, Category = "Drinks", Name = "Juice", Weight = 0.5f, Price = 50 };
+            dishes[28] = new Dish() { Id = 29, Category = "Snaсks", Name = "Shrimp shiso kimchi", Weight = 120, Price = 245 };
             dishes[29] = new Dish() { Id = 30, Category = "Snaсks", Name = "Chips", Weight = 100, Price = 135 };
             dishes[30] = new Dish() { Id = 31, Category = "Hot", Name = "Ramen Spicy", Weight = 350, Price = 145 };
             dishes[31] = new Dish() { Id = 32, Category = "Drinks", Name = "Morshynska 0.5L", Weight = 0.5f, Price = 35 };
 
             builder.Entity<Dish>().HasData(dishes);
 
+            builder.Entity<AdminUser>().HasData(
+                new AdminUser { Id = 1, Username = "admin", Password = "admin123" });
 
         }
     }

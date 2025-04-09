@@ -1,0 +1,31 @@
+﻿@model List<Dish>
+
+<h2>Управління меню</h2>
+
+<h1><a href="@Url.Action("CreateDish", "Admin")">+ Додати нову позицію</a></h1>
+
+<table border="1" cellpadding="8" style="margin-top:10px;">
+    <tr>
+        <th>ID</th>
+        <th>Категорія</th>
+        <th>Назва</th>
+        <th>Вага</th>
+        <th>Ціна</th>
+        <th>Дії</th>
+    </tr>
+    @foreach (var dish in Model)
+    {
+        <tr>
+            <td>@dish.Id</td>
+            <td>@dish.Category</td>
+            <td>@dish.Name</td>
+            <td>@dish.Weight г</td>
+            <td>@dish.Price грн</td>
+            <td>
+                <a href="@Url.Action("EditDish", "Admin", new { id = dish.Id })" style="color:black">Редагувати</a>
+                <a href="@Url.Action("DeleteDish", "Admin", new { id = dish.Id })" style="color:black">Видалити</a>
+            </td>
+        </tr>
+    }
+</table>
+<h1><a href="@Url.Action("Dashboard", "Admin")" >Повернутись до DashBoard</a></h1>

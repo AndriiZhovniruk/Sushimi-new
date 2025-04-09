@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Панель адміністратора";
+}
+
+<h2 >Панель адміністратора</h2>
+
+<ul>
+    <li><h1><a href="@Url.Action("Orders", "Admin")" style="color:black">Переглянути замовлення</a></h1></li>
+    <li><h1><a href="@Url.Action("ManageDishes", "Admin")" style="color:black">Редагувати меню</a></h1></li>
+    <li><h1><a href="@Url.Action("Logout", "Admin")" style="color:black">Вийти</a></h1></li>
+</ul>

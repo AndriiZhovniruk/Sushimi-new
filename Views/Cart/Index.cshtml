@@ -13,10 +13,10 @@ else
         </caption>
         <tr style=" font-weight: bold;">
             <th style="width:50%">Назва</th>
-            <th style="width:15%" >Кількість</th>
+            <th style="width:15%">Кількість</th>
             <th style="width:15%">Ціна</th>
             <th style="width:15%">В сумі</th>
-            <th style="width:5%" >Видалити</th>
+            <th style="width:5%">Видалити</th>
         </tr>
         <tbody>
             @foreach (var item in Model)
@@ -33,7 +33,7 @@ else
                 </tr>
             }
             <tr>
-                <th colspan="5" style="text-align:center">
+                <th colspan="6" style="text-align:center">
                     <p>Загальна сума: @Model.Sum(i => i.TotalPrice) грн</p>
                 </th>
             </tr>
@@ -41,7 +41,7 @@ else
                 <th style="width:50%">
                     <p><a href="@Url.Action("ClearCart", "Cart")" style="color:black">Очистити кошик</a></p>
                 </th>
-                <th colspan="4" style="width:50%">
+                <th colspan="5" style="width:50%">
                     <p><a href="@Url.Action("Checkout", "Order")" style="color:black">Оформити замовлення</a></p>
                 </th>
             </tr>
