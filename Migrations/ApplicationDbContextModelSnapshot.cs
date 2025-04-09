@@ -427,7 +427,7 @@ namespace Sushimi.Migrations
                         new
                         {
                             Id = 19,
-                            Category = "Snaсks",
+                            Category = "Snacks",
                             Name = "Inari",
                             Price = 140,
                             Weight = 65f
@@ -435,7 +435,7 @@ namespace Sushimi.Migrations
                         new
                         {
                             Id = 20,
-                            Category = "Snaсks",
+                            Category = "Snacks",
                             Name = "Sashimi",
                             Price = 480,
                             Weight = 155f
@@ -443,7 +443,7 @@ namespace Sushimi.Migrations
                         new
                         {
                             Id = 21,
-                            Category = "Snaсks",
+                            Category = "Snacks",
                             Name = "Tartar",
                             Price = 360,
                             Weight = 150f
@@ -451,7 +451,7 @@ namespace Sushimi.Migrations
                         new
                         {
                             Id = 22,
-                            Category = "Snaсks",
+                            Category = "Snacks",
                             Name = "Chuka",
                             Price = 230,
                             Weight = 185f
@@ -507,7 +507,7 @@ namespace Sushimi.Migrations
                         new
                         {
                             Id = 29,
-                            Category = "Snaсks",
+                            Category = "Snacks",
                             Name = "Shrimp shiso kimchi",
                             Price = 245,
                             Weight = 120f
@@ -515,7 +515,7 @@ namespace Sushimi.Migrations
                         new
                         {
                             Id = 30,
-                            Category = "Snaсks",
+                            Category = "Snacks",
                             Name = "Chips",
                             Price = 135,
                             Weight = 100f

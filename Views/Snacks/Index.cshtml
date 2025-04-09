@@ -2,13 +2,11 @@
 	ViewData["Title"] = "Snacks";
 }
 @model List<Dish>
-
 <div class="catalog">
 	@if (Model != null)
 	{
 		@foreach (var dish in Model)
 			@if (dish.Category == "Snacks")
-
 			{
 				{
 					<div class="block">

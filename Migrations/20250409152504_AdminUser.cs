@@ -28,48 +28,6 @@ namespace Sushimi.Migrations
                 table: "AdminUsers",
                 columns: new[] { "Id", "Password", "Username" },
                 values: new object[] { 1, "admin123", "admin" });
-
-            migrationBuilder.UpdateData(
-                table: "Dishes",
-                keyColumn: "Id",
-                keyValue: 19,
-                column: "Category",
-                value: "Snaсks");
-
-            migrationBuilder.UpdateData(
-                table: "Dishes",
-                keyColumn: "Id",
-                keyValue: 20,
-                column: "Category",
-                value: "Snaсks");
-
-            migrationBuilder.UpdateData(
-                table: "Dishes",
-                keyColumn: "Id",
-                keyValue: 21,
-                column: "Category",
-                value: "Snaсks");
-
-            migrationBuilder.UpdateData(
-                table: "Dishes",
-                keyColumn: "Id",
-                keyValue: 22,
-                column: "Category",
-                value: "Snaсks");
-
-            migrationBuilder.UpdateData(
-                table: "Dishes",
-                keyColumn: "Id",
-                keyValue: 29,
-                column: "Category",
-                value: "Snaсks");
-
-            migrationBuilder.UpdateData(
-                table: "Dishes",
-                keyColumn: "Id",
-                keyValue: 30,
-                column: "Category",
-                value: "Snaсks");
         }
 
         /// <inheritdoc />
