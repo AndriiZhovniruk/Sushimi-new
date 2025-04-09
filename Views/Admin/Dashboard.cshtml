@@ -1,5 +1,10 @@
-﻿@{
+﻿@using System.Globalization
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Newtonsoft.Json
+@model List<CategoryStatsViewModel>
+@{
     ViewBag.Title = "Панель адміністратора";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2 >Панель адміністратора</h2>
@@ -9,3 +14,89 @@
     <li><h1><a href="@Url.Action("ManageDishes", "Admin")" style="color:black">Редагувати меню</a></h1></li>
     <li><h1><a href="@Url.Action("Logout", "Admin")" style="color:black">Вийти</a></h1></li>
 </ul>
+<h2>Статистика замовлень</h2>
+@foreach (var category in Model)
+{
+    <div class="dashboard-container">
+        <h2>Категорія: @category.Category</h2>
+
+        <div class="overflow-x-auto">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Назва страви</th>
+                        <th style ="width:50%">Кількість замовлень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var dish in category.DishStats)
+                    {
+                        <tr>
+                            <td>@dish.DishName</td>
+                            <td>@dish.OrderCount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="chart-@category.Category.Replace(" ", "")" height="50"></canvas>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const chartData = @Html.Raw(JsonConvert.SerializeObject(
+        Model.Select(c => new
+        {
+            Category = c.Category.Replace(" ", ""),
+            CategoryName = c.Category,
+            Labels = c.DishStats.Select(ds => ds.DishName),
+            Data = c.DishStats.Select(ds => ds.OrderCount)
+        })
+        ));
+
+        document.addEventListener("DOMContentLoaded", function () {
+            chartData.forEach(c => {
+                const ctx = document.getElementById("chart-" + c.Category).getContext("2d");
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: c.Labels,
+                        datasets: [{
+                            label: "Кількість замовлень",
+                            data: c.Data,
+                            backgroundColor: "rgba(54, 162, 235, 0.6)",
+                            borderColor: "rgba(54, 162, 235, 1)",
+                            borderWidth: 1,
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: "Популярність страв у категорії: " + c.CategoryName
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

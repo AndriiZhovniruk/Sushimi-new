@@ -47,8 +47,25 @@ namespace SushiMI.Controllers
         {
             if (HttpContext.Session.GetString("IsAdmin") != "true")
                 return RedirectToAction("Index");
+            var stats = _context.Dishes
+                .GroupBy(d => d.Category)
+                .Select(g => new CategoryStatsViewModel
+                {
+                    Category = g.Key,
+                    DishStats = g.Select(d => new DishStatViewModel
+                    {
+                        DishName = d.Name,
+                        OrderCount = _context.OrderItems
+                            .Where(oi => oi.DishName == d.Name)
+                            .Sum(oi => oi.Quantity)
+                    })
+                    //.OrderBy(ds => ds.OrderCount)
+                    .OrderByDescending(x => x.OrderCount)
+                    .ToList()
+                })
+                .ToList();
 
-            return View();
+            return View(stats);
         }
 
         // ======== ORDERS ========
@@ -112,34 +129,33 @@ namespace SushiMI.Controllers
             return View(dish);
         }
 
-        [HttpGet]
-        public IActionResult EditDish(Dish dish, IFormFile imageFile)
-        {
-            if (HttpContext.Session.GetString("IsAdmin") != "true")
-                return RedirectToAction("Index");
+        //[HttpPost]
+        //public IActionResult EditDish(Dish dish, IFormFile image)
+        //{
+        //    if (HttpContext.Session.GetString("IsAdmin") != "true")
+        //        return RedirectToAction("Index");
 
-            if (ModelState.IsValid)
-            {
-                _context.Dishes.Update(dish);
-                _context.SaveChanges();
+        //    if (ModelState.IsValid)
+        //    {
+        //        // Оновлення страви в базі
+        //        _context.Dishes.Update(dish);
+        //        _context.SaveChanges();
 
-                if (imageFile != null && imageFile.Length > 0)
-                {
-                    var imagePath = Path.Combine("wwwroot", "Img", dish.Category);
-                    Directory.CreateDirectory(imagePath);
+        //        // Якщо зображення було завантажено, зберігаємо його
+        //        if (image != null)
+        //        {
+        //            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Img", dish.Category, $"{dish.Id}.png");
+        //            using (var stream = new FileStream(imagePath, FileMode.Create))
+        //            {
+        //                image.CopyTo(stream);
+        //            }
+        //        }
 
-                    var filePath = Path.Combine(imagePath, $"{dish.Id}.png");
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        imageFile.CopyTo(stream);
-                    }
-                }
+        //        return RedirectToAction("ManageDishes");
+        //    }
 
-                return RedirectToAction("ManageDishes");
-            }
-
-            return View(dish);
-        }
+        //    return View(dish);
+        //}
 
         [HttpPost]
         public IActionResult EditDish(Dish dish)

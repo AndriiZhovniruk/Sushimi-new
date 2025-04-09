@@ -5,11 +5,11 @@
 <form asp-action="EditDish" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
     
-    <div class="form-group">
+    @* <div class="form-group">
         <label>Зображення</label><br />
         
         <input type="file" name="imageFile" class="form-control" />
-    </div><br />
+    </div><br /> *@
 
     <label>Категорія:</label><br />
     <select asp-for="Category" class="form-control">
