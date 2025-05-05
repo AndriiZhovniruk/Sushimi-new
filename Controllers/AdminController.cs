@@ -25,8 +25,9 @@ namespace SushiMI.Controllers
         [HttpPost]
         public IActionResult Index(string username, string password)
         {
-            // ⚠️ ТИМЧАСОВИЙ ВАРІАНТ, пізніше можна підключити таблицю User
-            if (username == "admin" && password == "admin123")
+            var admin = _context.AdminUsers.FirstOrDefault(u => u.Username == username && u.Password == password);
+
+            if (admin != null)
             {
                 HttpContext.Session.SetString("IsAdmin", "true");
                 return RedirectToAction("Dashboard");
